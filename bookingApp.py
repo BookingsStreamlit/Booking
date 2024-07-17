@@ -15,35 +15,7 @@ from streamlit_js_eval import streamlit_js_eval
 import calendar
 import json
 
-###############################################
-# Access the password from secrets
-password = st.secrets["credentials"]["password"]
 
-# Function to check the password
-def check_password(input_password):
-    return input_password == password
-
-# Password input widget
-input_password = st.text_input("Enter password:", type="password")
-
-# Button to submit the password
-if st.button("Submit"):
-    if check_password(input_password):
-        st.success("Password is correct!")
-        st.session_state['authenticated'] = True
-    else:
-        st.error("Password is incorrect!")
-        st.session_state['authenticated'] = False
-
-# Main application code
-if st.session_state.get('authenticated'):
-    # Your main app code goes here
-    st.write("Welcome to the main app!")
-else:
-    st.write("Please enter the correct password to access the app.")
-
-    
-#################################################    
     
 # Set the timezone to "Europe/Dublin" (Ireland Time)
 ireland_tz = pytz.timezone('Europe/Dublin')
@@ -650,6 +622,35 @@ if width > 800:
     # if authenticate(password):
     #     st.empty()  # Clear the placeholder
     #     st.success("Logged in successfully!")
+    ###############################################
+    # Access the password from secrets
+    password = st.secrets["credentials"]["password"]
+    
+    # Function to check the password
+    def check_password(input_password):
+        return input_password == password
+    
+    # Password input widget
+    input_password = st.text_input("Enter password:", type="password")
+    
+    # Button to submit the password
+    if st.button("Submit"):
+        if check_password(input_password):
+            st.success("Password is correct!")
+            st.session_state['authenticated'] = True
+        else:
+            st.error("Password is incorrect!")
+            st.session_state['authenticated'] = False
+    
+    # Main application code
+    if st.session_state.get('authenticated'):
+        # Your main app code goes here
+        st.write("Welcome to the main app!")
+    else:
+        st.write("Please enter the correct password to access the app.")
+    
+        
+    #################################################    
     st.title("Meeting Room & Desk Booking System 🖥️")
     
     date = current_time_ireland.date()
@@ -670,6 +671,34 @@ if width > 800:
     elif menu_choice == "View Bookings":
         view_reservations()
 else:
+    # Access the password from secrets
+    password = st.secrets["credentials"]["password"]
+    
+    # Function to check the password
+    def check_password(input_password):
+        return input_password == password
+    
+    # Password input widget
+    input_password = st.text_input("Enter password:", type="password")
+    
+    # Button to submit the password
+    if st.button("Submit"):
+        if check_password(input_password):
+            st.success("Password is correct!")
+            st.session_state['authenticated'] = True
+        else:
+            st.error("Password is incorrect!")
+            st.session_state['authenticated'] = False
+    
+    # Main application code
+    if st.session_state.get('authenticated'):
+        # Your main app code goes here
+        st.write("Welcome to the main app!")
+    else:
+        st.write("Please enter the correct password to access the app.")
+    
+        
+    #################################################    
     st.title("Meeting Room & Desk Booking System 🖥️")
 
     date = current_time_ireland.date()
