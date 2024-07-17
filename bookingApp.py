@@ -620,12 +620,12 @@ if st.button("Submit"):
                 st.error(f"Failed to send email: {str(e)}")
                 return False
         
-        st.set_page_config(
-            page_title="Meeting Room Booking",
-            page_icon=":calendar:",
-            initial_sidebar_state="expanded",
-            layout="wide",
-        )
+        # st.set_page_config(
+        #     page_title="Meeting Room Booking",
+        #     page_icon=":calendar:",
+        #     initial_sidebar_state="expanded",
+        #     layout="wide",
+        # )
         
         width = streamlit_js_eval(js_expressions='screen.width', want_output = True, key = 'SCR')
         if width > 800:
