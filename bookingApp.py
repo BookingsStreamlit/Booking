@@ -636,7 +636,7 @@ if st.button("Submit"):
 # Main application code
 if st.session_state.get('authenticated'):
     # Your main app code goes here
-     width = streamlit_js_eval(js_expressions='screen.width', want_output = True, key = 'SCR')
+    width = streamlit_js_eval(js_expressions='screen.width', want_output = True, key = 'SCR')
     if width > 800:
         # # Input password
         # password = st.text_input("Enter Password:", type="password")
