@@ -636,13 +636,7 @@ if st.button("Submit"):
 # Main application code
 if st.session_state.get('authenticated'):
     # Your main app code goes here
-    st.write("Welcome to the main app!")
-else:
-    st.write("Please enter the correct password to access the app.")
-
-    
-    #################################################    
-    width = streamlit_js_eval(js_expressions='screen.width', want_output = True, key = 'SCR')
+     width = streamlit_js_eval(js_expressions='screen.width', want_output = True, key = 'SCR')
     if width > 800:
         # # Input password
         # password = st.text_input("Enter Password:", type="password")
@@ -691,6 +685,12 @@ else:
             cancel_room()
         elif menu_choice == "View Bookings":
             view_reservations()
+else:
+    st.write("Please enter the correct password to access the app.")
+
+    
+    #################################################    
+   
 
 
 
