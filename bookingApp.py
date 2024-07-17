@@ -641,56 +641,56 @@ else:
     st.write("Please enter the correct password to access the app.")
 
     
-#################################################    
-width = streamlit_js_eval(js_expressions='screen.width', want_output = True, key = 'SCR')
-if width > 800:
-    # # Input password
-    # password = st.text_input("Enter Password:", type="password")
+    #################################################    
+    width = streamlit_js_eval(js_expressions='screen.width', want_output = True, key = 'SCR')
+    if width > 800:
+        # # Input password
+        # password = st.text_input("Enter Password:", type="password")
+        
+        # # Check if the password is correct
+        # if authenticate(password):
+        #     st.empty()  # Clear the placeholder
+        #     st.success("Logged in successfully!")
+        
+        st.title("Meeting Room & Desk Booking System 🖥️")
+        
+        date = current_time_ireland.date()
+        time1=current_time_ireland.time()
+        current_time1 = f"{time1.hour:02d}:{time1.minute:02d}"
+        
+        st.sidebar.button(f"Today's Date 🗓️ {date}")
+        st.sidebar.button(f"Current Time ⏰ {current_time1}")
+        
+        # Sidebar menu
+        menu_choice = st.sidebar.selectbox("Menu", ["Book a Room or Desk", "Cancel Booking", "View Bookings"])
+       
+        
+        if menu_choice == "Book a Room or Desk":
+            book_room()
+        elif menu_choice == "Cancel Booking":
+            cancel_room()
+        elif menu_choice == "View Bookings":
+            view_reservations()
+    else:
+       
+        st.title("Meeting Room & Desk Booking System 🖥️")
     
-    # # Check if the password is correct
-    # if authenticate(password):
-    #     st.empty()  # Clear the placeholder
-    #     st.success("Logged in successfully!")
-    
-    st.title("Meeting Room & Desk Booking System 🖥️")
-    
-    date = current_time_ireland.date()
-    time1=current_time_ireland.time()
-    current_time1 = f"{time1.hour:02d}:{time1.minute:02d}"
-    
-    st.sidebar.button(f"Today's Date 🗓️ {date}")
-    st.sidebar.button(f"Current Time ⏰ {current_time1}")
-    
-    # Sidebar menu
-    menu_choice = st.sidebar.selectbox("Menu", ["Book a Room or Desk", "Cancel Booking", "View Bookings"])
-   
-    
-    if menu_choice == "Book a Room or Desk":
-        book_room()
-    elif menu_choice == "Cancel Booking":
-        cancel_room()
-    elif menu_choice == "View Bookings":
-        view_reservations()
-else:
-   
-    st.title("Meeting Room & Desk Booking System 🖥️")
-
-    date = current_time_ireland.date()
-    time1=current_time_ireland.time()
-    current_time1 = f"{time1.hour:02d}:{time1.minute:02d}"
-    
-    st.button(f"Today's Date 🗓️ {date}")
-    st.button(f"Current Time ⏰ {current_time1}")
-    
-    # Not Sidebar menu
-    menu_choice = st.selectbox("Menu", ["Book a Room or Desk", "Cancel Booking", "View Bookings"])
-    
-    if menu_choice == "Book a Room or Desk":
-        book_room()
-    elif menu_choice == "Cancel Booking":
-        cancel_room()
-    elif menu_choice == "View Bookings":
-        view_reservations()
+        date = current_time_ireland.date()
+        time1=current_time_ireland.time()
+        current_time1 = f"{time1.hour:02d}:{time1.minute:02d}"
+        
+        st.button(f"Today's Date 🗓️ {date}")
+        st.button(f"Current Time ⏰ {current_time1}")
+        
+        # Not Sidebar menu
+        menu_choice = st.selectbox("Menu", ["Book a Room or Desk", "Cancel Booking", "View Bookings"])
+        
+        if menu_choice == "Book a Room or Desk":
+            book_room()
+        elif menu_choice == "Cancel Booking":
+            cancel_room()
+        elif menu_choice == "View Bookings":
+            view_reservations()
 
 
 
