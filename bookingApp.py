@@ -644,32 +644,8 @@ if width > 800:
                     st.session_state['authenticated'] = True
                 else:
                     st.error("Password is incorrect!")
-                #######################################################################
-    # Sidebar form for password input
-    # with st.sidebar.form(key='password_form'):
-    #     input_password = st.text_input("Enter password:", type="password")
-    #     submit_button = st.form_submit_button(label='Submit')
-    
-    #     # Handle form submission
-    #     if submit_button:
-    #         if check_password(input_password):
-    #             st.success("Password is correct!")
-    #             st.session_state['authenticated'] = True
-    #         else:
-    #             st.error("Password is incorrect!")
-    #             st.session_state['authenticated'] = False
 
-#######################################################################
-    # input_password = st.sidebar.text_input("Enter password:", type="password")
 
-    # # Button to submit the password
-    # if st.sidebar.button("Submit"):
-    #     if check_password(input_password):
-    #         st.success("Password is correct!")
-    #         st.session_state['authenticated'] = True
-    #     else:
-    #         st.error("Password is incorrect!")
-    #         st.session_state['authenticated'] = False
 else:
     input_password = st.text_input("Enter password:", type="password")
 
