@@ -15,7 +15,7 @@ from streamlit_js_eval import streamlit_js_eval
 import calendar
 import json
 
-
+width = streamlit_js_eval(js_expressions='screen.width', want_output = True, key = 'SCR')
     
 # Set the timezone to "Europe/Dublin" (Ireland Time)
 ireland_tz = pytz.timezone('Europe/Dublin')
@@ -622,7 +622,7 @@ def check_password(input_password):
     return input_password == password
 
 # Password input widget
-width = streamlit_js_eval(js_expressions='screen.width', want_output = True, key = 'SCR')
+
 if width > 800:
     input_password = st.sidebar.text_input("Enter password:", type="password")
 
