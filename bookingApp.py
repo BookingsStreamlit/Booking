@@ -15,6 +15,13 @@ from streamlit_js_eval import streamlit_js_eval
 import calendar
 import json
 
+st.set_page_config(
+    page_title="Meeting Room Booking",
+    page_icon=":calendar:",
+    initial_sidebar_state="expanded",
+    layout="wide",
+)
+
 width = streamlit_js_eval(js_expressions='screen.width', want_output = True, key = 'SCR')
     
 # Set the timezone to "Europe/Dublin" (Ireland Time)
@@ -606,12 +613,7 @@ def send_confirmation_email(user_email, booking_id, name, description, selected_
         st.error(f"Failed to send email: {str(e)}")
         return False
 
-st.set_page_config(
-    page_title="Meeting Room Booking",
-    page_icon=":calendar:",
-    initial_sidebar_state="expanded",
-    layout="wide",
-)
+
 
 ###############################################
 # Access the password from secrets
