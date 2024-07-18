@@ -663,13 +663,7 @@ else:
 if st.session_state.get('authenticated'):
     # Your main app code goes here
     #width = streamlit_js_eval(js_expressions='screen.width', want_output = True, key = 'SCR')
-    if width > 800:
-        from streamlit_webrtc import webrtc_streamer
-        st.title("Webcam Live Feed")
-        st.write("Click on start to use your camera")
-        
-        webrtc_streamer(key="example")
-        
+    if width > 800:     
         st.title("Meeting Room & Desk Booking System 🖥️")
         
         date = current_time_ireland.date()
