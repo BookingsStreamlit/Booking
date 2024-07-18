@@ -403,7 +403,7 @@ def update_booking_csv(bookings_to_write):
         repo = g.get_repo("ohmydaysOMD/test")  # Assuming 'g' is your authenticated GitHub instance
         file = repo.get_contents(file_path, ref=branch_name)
         repo.update_file(file_path, "Update booking data", content, file.sha, branch=branch_name)
-        st.success("Booking data updated successfully!")
+       # st.success("Booking data updated successfully!")
     except Exception as e:
         st.error(f"Failed to update booking data: {e}")
         
@@ -608,7 +608,7 @@ def send_confirmation_email(user_email, booking_id, name, description, selected_
 
         # Close the SMTP session
         server.quit()
-        st.success("Email sent successfully!")
+        #st.success("Email sent successfully!")
         return True
     except Exception as e:
         st.error(f"Failed to send email: {str(e)}")
