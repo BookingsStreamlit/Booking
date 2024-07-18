@@ -623,8 +623,8 @@ def check_password(input_password):
 
 # Password input widget
 width = streamlit_js_eval(js_expressions='screen.width', want_output = True, key = 'SCR')
-    if width > 800:
-        input_password = st.sidebar.text_input("Enter password:", type="password")
+if width > 800:
+    input_password = st.sidebar.text_input("Enter password:", type="password")
 
 # Button to submit the password
 if st.button("Submit"):
