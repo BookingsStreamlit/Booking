@@ -664,13 +664,11 @@ if st.session_state.get('authenticated'):
     # Your main app code goes here
     #width = streamlit_js_eval(js_expressions='screen.width', want_output = True, key = 'SCR')
     if width > 800:
-        # # Input password
-        # password = st.sidebar.text_input("Enter Password:", type="password")
+        from streamlit_webrtc import webrtc_streamer
+        st.title("Webcam Live Feed")
+        st.write("Click on start to use your camera")
         
-        # # Check if the password is correct
-        # if authenticate(password):
-        #     st.empty()  # Clear the placeholder
-        #     st.success("Logged in successfully!")
+        webrtc_streamer(key="example")
         
         st.title("Meeting Room & Desk Booking System 🖥️")
         
