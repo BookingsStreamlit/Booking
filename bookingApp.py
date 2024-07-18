@@ -688,7 +688,7 @@ if st.session_state.get('authenticated'):
     #width = streamlit_js_eval(js_expressions='screen.width', want_output = True, key = 'SCR')
     if width > 800:
         if 'authenticated' not in st.session_state:
-            st.session_state['authenticated'] = False
+        st.session_state['authenticated'] = False
     
     if not st.session_state['authenticated']:
         # Sidebar form for password input
