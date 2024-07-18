@@ -687,6 +687,22 @@ if st.session_state.get('authenticated'):
     # Your main app code goes here
     #width = streamlit_js_eval(js_expressions='screen.width', want_output = True, key = 'SCR')
     if width > 800:
+        if 'authenticated' not in st.session_state:
+        st.session_state['authenticated'] = False
+    
+    if not st.session_state['authenticated']:
+        # Sidebar form for password input
+        with st.sidebar.form(key='password_form'):
+            input_password = st.text_input("Enter password:", type="password")
+            submit_button = st.form_submit_button(label='Submit')
+    
+            # Handle form submission
+            if submit_button:
+                if check_password(input_password):
+                    st.success("Password is correct!")
+                    st.session_state['authenticated'] = True
+                else:
+                    st.error("Password is incorrect!")
         # # Input password
         # password = st.sidebar.text_input("Enter Password:", type="password")
         
