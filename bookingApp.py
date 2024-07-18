@@ -541,6 +541,7 @@ def view_reservations():
             past_reservations_df = pd.DataFrame(past_bookings)
             past_reservations_df = past_reservations_df.drop(columns=["email", "description"])
             past_reservations_df.columns = ["Booking ID", "Date", "Start Time", "End Time", "Venue", "Booked by"]
+            past_reservations_df = past_reservations_df.sort_values(by='Date', ascending=False)
             st.table(past_reservations_df.assign(hack='').set_index('hack'))
 
 
